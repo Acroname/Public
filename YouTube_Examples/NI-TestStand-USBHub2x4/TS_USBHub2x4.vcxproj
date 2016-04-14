@@ -103,6 +103,9 @@
       <TargetMachine>MachineX86</TargetMachine>
       <AdditionalDependencies>iphlpapi.lib;winusb.lib;SetupAPI.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy $(ProjectDir)lib\w32\BrainStem2.dll $(ProjectDir)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
@@ -148,6 +151,9 @@
       <TargetMachine>MachineX64</TargetMachine>
       <AdditionalDependencies>iphlpapi.lib;winusb.lib;SetupAPI.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy $(ProjectDir)lib\x64\BrainStem2.dll $(ProjectDir)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="StdAfx.cpp">
@@ -173,10 +179,10 @@
     <ClInclude Include="StdAfx.h" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="lib\BrainStem2static_32.lib">
+    <Library Include="lib\w32\BrainStem2.lib">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </Library>
-    <Library Include="lib\BrainStem2static_64.lib">
+    <Library Include="lib\x64\BrainStem2.lib">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </Library>
   </ItemGroup>
