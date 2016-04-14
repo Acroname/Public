@@ -71,7 +71,7 @@ void __declspec(dllexport) __stdcall TS_ConnectToHub(unsigned int serialNumber,
 }
 
 /////////////////////////////////////////////////////////////////////////////////
-// Enable the downstream port on channel - G
+// Enable the downstream port on channel
 void __declspec(dllexport) __stdcall TS_EnableDownstreamPort(unsigned int channel,
 	int *errorOccurred,
 	long *errorCode,
@@ -103,9 +103,7 @@ void __declspec(dllexport) __stdcall TS_EnableDownstreamPort(unsigned int channe
 }
 
 /////////////////////////////////////////////////////////////////////////////////
-//Create and connect to a BrainStem USBHub2x4 with the given serial Number.
-// Serial numbers of modules can be found using the Updater.exe tool
-// Updater -D
+// Enable the downstream port on channel
 void __declspec(dllexport) __stdcall TS_DisableDownstreamPort(unsigned int channel,
 	int *errorOccurred,
 	long *errorCode,
