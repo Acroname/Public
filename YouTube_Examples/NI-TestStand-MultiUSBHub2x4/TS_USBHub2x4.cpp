@@ -7,6 +7,7 @@
 
 //global variables to hold values between calls
 aUSBHub2x4* multiHubs;
+int numDevices = 0;
 
 BOOL APIENTRY DllMain(HANDLE hModule,
 	DWORD  ul_reason_for_call,
@@ -37,7 +38,8 @@ extern "C" {
 
 		try {
 			aErr err = aErrNone;
-			int numDevices = sizeof(serialNumber)/sizeof(unsigned int);
+
+			numDevices = sizeof(serialNumber)/sizeof(unsigned int);
 
 			multiHubs = new aUSBHub2x4[numDevices];
 
@@ -148,15 +150,10 @@ extern "C" {
 
 		try {
 			aErr err = aErrNone;
-			int numDevices = sizeof(multiHubs) / sizeof(aUSBHub2x4);
 
 			for (int i = 0; i < numDevices; i++) {
 				if (multiHubs[i].linkIsConnected()) {
-					err = multiHubs[i].clearLink();
 					err = multiHubs[i].linkDisconnect();
-					multiHubs[i] = NULL;
-				} else if (!multiHubs[i].linkIsConnected()) {
-					multiHubs[i] = NULL;
 				}
 
 				if (err != aErrNone) {
@@ -181,8 +178,6 @@ extern "C" {
 	int FindIndexFromSerialNumber(unsigned int serialNumber) {
 
 		linkSpec spec;
-		int index = 0;
-		int numDevices = sizeof(multiHubs) / sizeof(aUSBHub2x4);
 
 		for (int i = 0; i < numDevices; i++) {
 			multiHubs[i].getLinkSpecifier(&spec);
