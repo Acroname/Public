@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3D57D2E8-BAC5-4CF3-A108-C2339579922B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>LabViewTesting</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\Acroname_User\Documents\Visual Studio 2013\Projects\LabViewTesting\lib;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Users\Acroname_User\Documents\Visual Studio 2013\Projects\LabViewTesting\lib;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;LABVIEWTESTING_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <CallingConvention>StdCall</CallingConvention>
+      <AdditionalIncludeDirectories>$(ProjectDir)\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;LABVIEWTESTING_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <CallingConvention>StdCall</CallingConvention>
+      <AdditionalIncludeDirectories>$(ProjectDir)\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\lib\BrainStem2\a40PinModule.h" />
+    <ClInclude Include="..\lib\BrainStem2\aDefs.h" />
+    <ClInclude Include="..\lib\BrainStem2\aDiscover.h" />
+    <ClInclude Include="..\lib\BrainStem2\aError.h" />
+    <ClInclude Include="..\lib\BrainStem2\aEtherStem.h" />
+    <ClInclude Include="..\lib\BrainStem2\aFile.h" />
+    <ClInclude Include="..\lib\BrainStem2\aLink.h" />
+    <ClInclude Include="..\lib\BrainStem2\aMTMEtherStem.h" />
+    <ClInclude Include="..\lib\BrainStem2\aMTMIOSerial.h" />
+    <ClInclude Include="..\lib\BrainStem2\aMTMPM1.h" />
+    <ClInclude Include="..\lib\BrainStem2\aMTMRelay.h" />
+    <ClInclude Include="..\lib\BrainStem2\aMTMStemModule.h" />
+    <ClInclude Include="..\lib\BrainStem2\aMTMUSBStem.h" />
+    <ClInclude Include="..\lib\BrainStem2\aMutex.h" />
+    <ClInclude Include="..\lib\BrainStem2\aPacket.h" />
+    <ClInclude Include="..\lib\BrainStem2\aProtocoldefs.h" />
+    <ClInclude Include="..\lib\BrainStem2\aStream.h" />
+    <ClInclude Include="..\lib\BrainStem2\aTime.h" />
+    <ClInclude Include="..\lib\BrainStem2\aUEI.h" />
+    <ClInclude Include="..\lib\BrainStem2\aUSBHub2x4.h" />
+    <ClInclude Include="..\lib\BrainStem2\aUSBHub3p.h" />
+    <ClInclude Include="..\lib\BrainStem2\aUSBStem.h" />
+    <ClInclude Include="..\lib\BrainStem2\aVersion.h" />
+    <ClInclude Include="..\lib\BrainStem2\BrainStem-all.h" />
+    <ClInclude Include="..\lib\BrainStem2\BrainStem-C.h" />
+    <ClInclude Include="..\lib\BrainStem2\BrainStem-core.h" />
+    <ClInclude Include="..\lib\BrainStem2\BrainStem-entity.h" />
+    <ClInclude Include="..\lib\BrainStem2\BrainStem-util.h" />
+    <ClInclude Include="AnalogEntity_LabView.h" />
+    <ClInclude Include="DigitalEntity_LabView.h" />
+    <ClInclude Include="LabView_All.h" />
+    <ClInclude Include="Modules_LabView.h" />
+    <ClInclude Include="SystemEntity_LabView.h" />
+    <ClInclude Include="Utilities.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="USBEntity_LabView.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AnalogEntity_LabView.cpp" />
+    <ClCompile Include="DigitalEntity_LabView.cpp" />
+    <ClCompile Include="dllmain.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Modules_LabView.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="SystemEntity_LabView.cpp" />
+    <ClCompile Include="USBEntity_LabView.cpp" />
+    <ClCompile Include="Utilities.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\lib\BrainStem2\BrainStem_POC.vi" />
+    <None Include="..\lib\w32\BrainStem2.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\lib\w32\BrainStem2.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
