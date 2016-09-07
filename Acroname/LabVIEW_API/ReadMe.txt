@@ -20,7 +20,6 @@ the "BrainStem_DLL_Import" folder.
 
 
 
-
 Project Layout:
 =================================================================================
 LabView_BS_Project - Contains complete labview project (2015) include Hub deploy package.
