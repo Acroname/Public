@@ -1,0 +1,24 @@
+===============================================================================
+AcronisBackupExample Readme
+===============================================================================
+
+This is a basic C++ example for how to use an Acroname 8 Port Programmable USB hub 
+alongside Acronis backup software in order to keep rotating backups offline. When executed, 
+this example disables each downstream device port on the hub,
+and then re-enables one based on the day of the week. If run with the argument "post" this 
+program will in stead disable all ports to keep backups offline.
+
+Notes:
+===============================================================================
+
+# To build, copy the lib directory from the development folder into this directory. 
+    The lib directory contains the required header files, and the Brainstem2 DLL and 
+    LIB files.
+
+# The output directory is win32_AcronisBackupExample/Debug.
+
+# A build step has been added to the project that copies the shared object into 
+    the build output directory.
+
+If you have questions, please see the reference, or check out our guides 
+at www.acroname.com.
