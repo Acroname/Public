@@ -1,6 +1,6 @@
 //
 //  main.cpp
-//  BrainStem2Example
+//  AcronisExample
 //
 /////////////////////////////////////////////////////////////////////
 //                                                                 //
@@ -21,19 +21,20 @@ int main(int argc, const char * argv[]) {
     // Create an instance of the USBHub3p
     aUSBHub3p hub;
     aErr err = aErrNone;
+	int sleepTime_ms = 30000;
 
     // Connect to the hardware.
-    // The only difference for TCP/IP modules is to change 'USB' to 'TCP';
-    // ex err = stem.discoverAndConnect(USB, 0x40F5849A); // for a known serial number
-	// If you have more than one Acroname Hub connected to the host computer, you'll have to use the above method with the serial number of the backup device hub.
+	// If you are using multiple hubs you will have to specify which hub to connect to by serial number.
+    // err = stem.discoverAndConnect(USB, 0x40F5849A); // for a known serial number
     err = hub.discoverAndConnect(USB);
     if (err != aErrNone) {
-        std::cout << "Error "<< err <<" encountered connecting to BrainStem module" << std::endl;
-        return 1;
+        std::cerr << "Error "<< err <<" encountered connecting to BrainStem module" << std::endl;
+        return err;
     } else {
         std::cout << "Connected to BrainStem module." << std::endl;
     }
-	if (argc == 1)
+
+	if (argc == 1)//argc == 1, run pre command
 	{
 		//Disable all ports to prepare to only enable one
 		std::cout << "Disabling ports" << std::endl;
@@ -41,17 +42,20 @@ int main(int argc, const char * argv[]) {
 			// Disable all ports.
 			err = hub.usb.setPortDisable(i);
 		}
+
 		//Find day of week, Sunday = 0, Monday = 1, ... Saturday = 6
 		std::time_t tempTime = time(NULL);
 		const std::tm * currTime = std::localtime(&tempTime);
-		std::cout << "Enabling port" << std::endl;
+		std::cout << "Enabling port " << currTime->tm_wday << std::endl;
+
 		//Enable port based on day of week
 		err = hub.usb.setPortEnable(currTime->tm_wday);
 
 		//Wait a few seconds for the host computer to connect to the drive
-		aTime_MSSleep(15000);
+		std::cout << "Sleeping for " << sleepTime_ms / 1000 << " seconds. " << std::endl;
+		aTime_MSSleep(30000);
 	}
-	else
+	else //argc > 1, run post command
 	{
 		aTime_MSSleep(5000);
 		for (int i = 0; i < 8; ++i) {
@@ -62,7 +66,12 @@ int main(int argc, const char * argv[]) {
 
 	//Save hub state
 	err = hub.system.save();
-	std::cout << err;
+	if (err != aErrNone) {
+		std::cerr << "Error " << err << " encountered saving hub state." << std::endl;
+	}
+	else {
+		std::cout << "Save succeeded." << std::endl;
+	}
 
 	// Disconnect
 	err = hub.disconnect();
@@ -71,5 +80,4 @@ int main(int argc, const char * argv[]) {
 	}
 
     return 0;
-
 }
