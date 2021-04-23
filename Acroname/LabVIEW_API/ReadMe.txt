@@ -1,7 +1,19 @@
-September 2, 2016
+April 23, 2021
+
+#THIS EXAMPLE IS DEPRECATED
+
+#Please visit www.acroname.com/support for our fully supported LabVIEW API
+
+
+
+
+
+
+
+
 
 =================================================================================
-BrainStem® LabVIEW API: Open Source
+BrainStemÂ® LabVIEW API: Open Source
 =================================================================================
 
 
