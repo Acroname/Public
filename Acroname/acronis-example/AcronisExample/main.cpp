@@ -4,8 +4,9 @@
 //
 /////////////////////////////////////////////////////////////////////
 //                                                                 //
-// Copyright (c) 2018 Acroname Inc. - All Rights Reserved          //
+// Copyright (c) 2019 Acroname Inc. - All Rights Reserved          //
 //                                                                 //
+// Author: Narayan Birkley                                         //
 // This file is part of the BrainStem release. See the license.txt //
 // file included with this package or go to                        //
 // https://acroname.com/software/brainstem-development-kit         //
@@ -53,7 +54,7 @@ int main(int argc, const char * argv[]) {
 
 		//Wait a few seconds for the host computer to connect to the drive
 		std::cout << "Sleeping for " << sleepTime_ms / 1000 << " seconds. " << std::endl;
-		aTime_MSSleep(30000);
+		aTime_MSSleep(sleepTime_ms);//double check
 	}
 	else //argc > 1, run post command
 	{
