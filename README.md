@@ -1,12 +1,14 @@
-April 23, 2021
+January 21, 2022
 
 # Acroname Public Github Account
 
-Generally speaking this account is used to host code for our blogs or they were not a
-good fit for our BrainStem Development Kit.
+This repository is used to host code found in our blog posts and other code snippets
+which are not a good fit for the Brainstem Development Kit. 
 
-If you are looking for our LabVIEW API or the current development kit including HubTool; 
-Please visit www.acroname.com/support.
+Much of this code is outdated and is no longer compatiable with the Brainstem Development kit.
 
-Note: Most examples in this repository will require modification in order to run as 
-the libraries they were built on have changed significantly. 
+All examples and documentation related to National Instruments TestStand or LabVIEW are
+outdated and not supported.  Our LabVIEW API is now provided in the Brainstem Development
+Kit and is not compatible with the examples found here.
+
+Please visit www.acroname.com/support for all downloads and inquiries.
